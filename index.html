@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script defer src="./src/js/script.js"></script>
+
+    <title>Gerador de checkout</title>
+</head>
+<body>
+    <main>
+        <h1>Gerador de checkout</h1>
+        <p> Utilize o formulário abaixo para listar as atividades do dia, e após finalizar as mesmas clique em gerar código.</p>
+        <fieldset>
+            <form>
+                <label for="input">@</label>
+                <input type="text" id="input" placeholder="Digite o @ dos alunos"></input>
+                <select>
+                    <option id="1">Contato ativo</option>
+                    <option id="2">/pergunta</option>
+                    <option id="3">Outras atividades</option>
+                    <option id="4">Pendências</option>
+                </select>
+            </form>
+                <div classe="botoes">
+                    <button class="botao1" type="submit">+</button>
+                    <button class="botao2" type="submit">Gerar código</button>
+                    <button class="botao3" type="submit">Limpar</button>
+                </div>
+        </fieldset>
+
+        <ul class="lista">
+
+        </ul>
+    </main>
+</body>
+</html>
