@@ -1,16 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DynaPuff&family=Silkscreen&display=swap");
+
 body {
-  max-width: 1200px;
-  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 10px 0;
+  font-family: "Anton", sans-serif;
 }
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 370px;
-  margin: 20px auto;
-  gap: 20px;
+  max-width: 95vw;
+  margin: 0 auto;
+  gap: 30px;
   align-items: center;
+  background-color: rgba(224, 223, 223, 0.521);
+  max-height: 95vh;
 }
 
 h1 {
@@ -18,31 +26,37 @@ h1 {
 }
 
 p {
-  font-size: 20px;
-  margin: auto 5%;
+  font-size: 16px;
+  font-weight: 50;
 }
 
 fieldset {
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
+  padding: 10px 0;
   gap: 10px;
   background-color: rgba(139, 13, 13, 0.904);
-  padding: 10px;
+  max-height: 60%;
   border-radius: 20%;
 }
 
 form {
   display: flex;
   justify-content: center;
-  gap: 3%;
+  gap: 2%;
 }
 
 label {
   color: #ffff;
+  border-radius: 10px;
+}
+
+select {
+  border-radius: 10px;
 }
 
 .botoes {
@@ -55,17 +69,85 @@ button {
   border-radius: 12%;
 }
 
-.botao1 {
+.add {
   background-color: green;
   border: solid 2px rgba(73, 128, 0, 0.911);
 }
 
-.botao2 {
+.gerar {
   background-color: rgb(10, 66, 139);
   border: solid 2px rgb(0, 89, 255);
 }
 
-.botao3 {
+.limpar {
   background-color: rgb(255, 174, 0);
   border: solid 2px rgb(208, 255, 0);
 }
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-height: 100%;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 8%;
+  background-color: #ffff;
+  width: 80%;
+}
+
+.nomeAluno {
+  font-family: "Silkscreen", cursive;
+  color: rgb(0, 87, 0);
+  font-weight: bold;
+}
+
+.outros {
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+  color: rgb(49, 1, 1);
+}
+
+.categoria {
+  font-family: "DynaPuff", cursive;
+}
+
+.Contatoativo {
+  color: black;
+}
+
+.pergunta {
+  color: rgb(10, 66, 139);
+}
+
+.Outrasatividades {
+  color: orange;
+}
+
+.Pendncias {
+  color: red;
+}
+
+.copiarCodigo {
+  background-color: rgb(0, 81, 255);
+  color: #ffff;
+  font-weight: bold;
+  padding: 2%;
+  border-radius: 50%;
+}
+
+.remover {
+  width: 5%;
+}
+
+/* .copiarCodigo:hover {
+  background-color: rgba(0, 81, 255, 0.548);
+} */
