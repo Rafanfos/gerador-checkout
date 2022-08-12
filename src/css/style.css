@@ -283,16 +283,36 @@ span {
     font-size: 12px;
   }
 
+  .add:hover {
+    background-color: rgba(0, 128, 0, 0.651);
+    cursor: pointer;
+  }
+
   .gerar {
     max-width: 40%;
     height: 40px;
     font-size: 12px;
   }
 
+  .gerar:hover {
+    background-color: rgba(10, 66, 139, 0.548);
+    cursor: pointer;
+  }
+
   .limpar {
     max-width: 40%;
     height: 40px;
     font-size: 12px;
+  }
+
+  .limpar:hover {
+    background-color: rgba(255, 174, 0, 0.637);
+    cursor: pointer;
+  }
+
+  .remover:hover {
+    opacity: 60%;
+    cursor: pointer;
   }
 
   span {
