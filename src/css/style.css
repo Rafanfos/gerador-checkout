@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DynaPuff&family=Silkscreen&display=swap");
 
 body {
+  margin: 0 auto;
   box-sizing: border-box;
   text-align: center;
   max-width: 97vw;
@@ -58,7 +59,7 @@ label {
 
 select {
   border-radius: 10px;
-  max-width: 40%;
+  width: 40%;
 }
 
 .botoes {
