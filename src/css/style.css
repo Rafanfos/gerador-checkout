@@ -59,13 +59,14 @@ label {
 
 select {
   border-radius: 10px;
-  width: 40%;
+  width: 30%;
 }
 
 .botoes {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5%;
 }
 
 button {
