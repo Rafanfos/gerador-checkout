@@ -85,7 +85,7 @@ button {
 }
 
 .limpar {
-  background-color: rgb(255, 230, 0);
+  background-color: rgba(255, 230, 0, 0.863);
   border: solid 2px rgb(208, 255, 0);
 }
 
