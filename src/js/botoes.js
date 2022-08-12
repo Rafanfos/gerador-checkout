@@ -18,10 +18,11 @@ add.addEventListener("click", () => {
   const input = document.querySelector("#input");
   const atendimento = input.value.trim();
   const categoria = select.value;
-  atendimentos.push({ atividade: atendimento, tipo: categoria });
+  const ativ = { atividade: atendimento, tipo: categoria };
+  atendimentos.push(ativ);
   lista.innerHTML = "";
   listadas(atendimentos);
-  console.log(atendimentos);
+  armazenamento(atendimentos);
 });
 
 botaoGerar.addEventListener("click", () => {
@@ -32,6 +33,7 @@ botaoGerar.addEventListener("click", () => {
 limpar.addEventListener("click", () => {
   lista.innerHTML = "";
   atendimentos.splice(0, atendimentos.length);
+  localStorage.clear();
 });
 
 lista.addEventListener("click", (event) => {
@@ -41,7 +43,8 @@ lista.addEventListener("click", (event) => {
     const listaProxima = clicado.closest("li");
     listaProxima.remove();
     atendimentos.splice(indice, 1);
-    console.log(atendimentos);
+    localStorage.clear();
+    armazenamento(atendimentos);
   }
 });
 
@@ -51,3 +54,7 @@ const chamaCopiarCodigo = (codigo) => {
     navigator.clipboard.writeText(codigo);
   });
 };
+
+function armazenamento(arr) {
+  localStorage.setItem(`atendimentos`, JSON.stringify(arr));
+}
