@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
   text-align: center;
   max-width: 97vw;
-  max-height: 100vh;
+  max-height: 150vh;
   padding: 10px 0;
   font-family: "Anton", sans-serif;
 }
@@ -19,7 +19,7 @@ main {
   gap: 30px;
   align-items: center;
   background-color: rgba(224, 223, 223, 0.521);
-  max-height: 95vh;
+  max-height: 90%;
 }
 
 h1 {
