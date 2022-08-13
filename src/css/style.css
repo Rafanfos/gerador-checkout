@@ -246,6 +246,52 @@ span {
     width: 20px;
     height: 20px;
   }
+  .add {
+    max-width: 40%;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .add:hover {
+    background-color: rgba(0, 128, 0, 0.651);
+    cursor: pointer;
+  }
+
+  .gerar {
+    max-width: 40%;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .gerar:hover {
+    background-color: rgba(10, 66, 139, 0.548);
+    cursor: pointer;
+  }
+
+  .limpar {
+    max-width: 40%;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .limpar:hover {
+    background-color: rgba(255, 251, 0, 0.603);
+    cursor: pointer;
+  }
+
+  .remover:hover {
+    opacity: 60%;
+    cursor: pointer;
+  }
+
+  .copiarCodigo:hover {
+    background-color: rgb(255, 123, 0);
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 992px) {
