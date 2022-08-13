@@ -16,13 +16,14 @@ select.addEventListener("click", () => {
 
 add.addEventListener("click", () => {
   const input = document.querySelector("#input");
-  const atendimento = input.value.trim();
+  const atendimento = input.value.trim().replace(/[@]/gi, "");
   const categoria = select.value;
   const ativ = { atividade: atendimento, tipo: categoria };
   atendimentos.push(ativ);
   lista.innerHTML = "";
   listadas(atendimentos);
   armazenamento(atendimentos);
+  input.value = "";
 });
 
 botaoGerar.addEventListener("click", () => {
