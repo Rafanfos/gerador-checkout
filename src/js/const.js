@@ -36,7 +36,7 @@ const addItem = (atendimento) => {
 };
 
 function buscarId() {
-  if (atendimentos) {
+  if (atendimentos.length) {
     return atendimentos[atendimentos.length - 1].aId;
   }
 }
