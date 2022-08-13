@@ -15,14 +15,17 @@ select.addEventListener("click", () => {
 });
 
 add.addEventListener("click", () => {
+  id++;
   const input = document.querySelector("#input");
-  const atendimento = input.value.trim().replace(/[@]/gi, "");
-  const categoria = select.value;
+  const atendimento = input.value.trim();
+  let categoria = select.value;
+  if (categoria === "Outras atividades" || categoria === "/pergunta") {
+    categoria = categoria.replace(/[@]/gi, "");
+  }
   if (atendimento !== "") {
-    const ativ = { atividade: atendimento, tipo: categoria };
+    const ativ = { atividade: atendimento, tipo: categoria, aId: id };
     atendimentos.push(ativ);
-    lista.innerHTML = "";
-    listadas(atendimentos);
+    addItem(ativ);
     armazenamento(atendimentos);
     input.value = "";
   }
@@ -34,18 +37,20 @@ botaoGerar.addEventListener("click", () => {
 });
 
 limpar.addEventListener("click", () => {
+  id = 0;
   lista.innerHTML = "";
   atendimentos.splice(0, atendimentos.length);
   localStorage.clear();
 });
 
 lista.addEventListener("click", (event) => {
+  id--;
   const clicado = event.target;
   if (clicado.tagName === "IMG") {
-    const indice = +clicado.id - 1;
+    const indice = atendimentos.findIndex(({ id }) => id === clicado.id);
     const listaProxima = clicado.closest("li");
-    listaProxima.remove();
     atendimentos.splice(indice, 1);
+    listaProxima.remove();
     localStorage.clear();
     armazenamento(atendimentos);
   }
