@@ -159,6 +159,11 @@ span {
   white-space: nowrap;
 }
 
+.categoria-e-remover {
+  display: flex;
+  gap: 10px;
+}
+
 @media (min-width: 576px) {
   main {
     max-width: 80vw;

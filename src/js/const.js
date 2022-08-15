@@ -7,10 +7,12 @@ const limpar = document.querySelector(".limpar");
 const select = document.querySelector("select");
 let atendimentos = buscarStorage() || [];
 let id = buscarId() || 0;
+const input = document.querySelector("input");
 
 const addItem = (atendimento) => {
   let itemLista = document.createElement("li");
   let tituloAtividade = document.createElement("span");
+  let categoriaERemover = document.createElement("div");
   let tituloCategoria = document.createElement("span");
   let botaoRemover = document.createElement("img");
 
@@ -27,12 +29,14 @@ const addItem = (atendimento) => {
   tituloCategoria.innerText = atendimento.tipo;
   tituloCategoria.classList.add("categoria");
   tituloCategoria.classList.add(atendimento.tipo.match(/[A-Z]/gi).join(""));
+  categoriaERemover.classList.add("categoria-e-remover");
   botaoRemover.id = id;
   botaoRemover.classList.add("remover");
   botaoRemover.src = "./src/img/botao-remover.png";
 
   lista.append(itemLista);
-  itemLista.append(tituloAtividade, tituloCategoria, botaoRemover);
+  itemLista.append(tituloAtividade, categoriaERemover);
+  categoriaERemover.append(tituloCategoria, botaoRemover);
 };
 
 function buscarId() {
@@ -113,30 +117,4 @@ const geradorCodigo = (atividades) => {
   chamaCopiarCodigo(codigo);
 };
 
-const listadas = (atividades) => {
-  atividades.forEach(({ atividade, tipo }) => {
-    let itemLista = document.createElement("li");
-    let tituloAtividade = document.createElement("span");
-    let tituloCategoria = document.createElement("span");
-    let botaoRemover = document.createElement("img");
-
-    if (tipo === "Contato ativo" || tipo === "/pergunta") {
-      tituloAtividade.classList.add("nomeAluno");
-    } else {
-      tituloAtividade.classList.add("outros");
-    }
-
-    tituloAtividade.innerText = atividade;
-    tituloCategoria.innerText = tipo;
-    tituloCategoria.classList.add("categoria");
-    tituloCategoria.classList.add(tipo.match(/[A-Z]/gi).join(""));
-    botaoRemover.id = id;
-    botaoRemover.classList.add("remover");
-    botaoRemover.src = "./src/img/botao-remover.png";
-
-    lista.append(itemLista);
-    itemLista.append(tituloAtividade, tituloCategoria, botaoRemover);
-  });
-};
-
-listadas(atendimentos);
+atendimentos.forEach((atendimento) => addItem(atendimento));

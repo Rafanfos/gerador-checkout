@@ -1,6 +1,5 @@
 select.addEventListener("click", () => {
   const categoria = select.value;
-  const input = document.querySelector("#input");
   const label = document.querySelector("label");
   if (categoria === "Outras atividades") {
     label.innerText = "";
@@ -17,17 +16,39 @@ select.addEventListener("click", () => {
 add.addEventListener("click", () => {
   id++;
   const input = document.querySelector("#input");
-  const atendimento = input.value.trim();
+  const atendimento = input.value
+    .trim()
+    .normalize("NFD")
+    .replace(/[^A-Z-.\s]/gi, "");
   let categoria = select.value;
-  if (categoria === "Outras atividades" || categoria === "/pergunta") {
-    categoria = categoria.replace(/[@]/gi, "");
-  }
+
   if (atendimento !== "") {
     const ativ = { atividade: atendimento, tipo: categoria, aId: id };
     atendimentos.push(ativ);
     addItem(ativ);
     armazenamento(atendimentos);
     input.value = "";
+  }
+});
+
+input.addEventListener("keypress", (event) => {
+  if (event.key == "Enter") {
+    id++;
+    const input = document.querySelector("#input");
+    const atendimento = input.value
+      .trim()
+      .normalize("NFD")
+      .replace(/[^A-Z-.\s]/gi, "");
+    let categoria = select.value;
+
+    if (atendimento !== "") {
+      const ativ = { atividade: atendimento, tipo: categoria, aId: id };
+      atendimentos.push(ativ);
+      addItem(ativ);
+      armazenamento(atendimentos);
+      input.value = "";
+    }
+    event.preventDefault();
   }
 });
 
