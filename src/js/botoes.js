@@ -28,6 +28,7 @@ add.addEventListener("click", () => {
     addItem(ativ);
     armazenamento(atendimentos);
     input.value = "";
+    addToast.showToast();
   }
 });
 
@@ -61,6 +62,7 @@ limpar.addEventListener("click", () => {
   id = 0;
   lista.innerHTML = "";
   atendimentos.splice(0, atendimentos.length);
+  limparToast.showToast();
   localStorage.clear();
 });
 
@@ -74,6 +76,7 @@ lista.addEventListener("click", (event) => {
     listaProxima.remove();
     localStorage.clear();
     armazenamento(atendimentos);
+    removerToast.showToast();
   }
 });
 
@@ -81,9 +84,14 @@ const chamaCopiarCodigo = (codigo) => {
   const copiarCodigo = document.querySelector(".copiarCodigo");
   copiarCodigo.addEventListener("click", () => {
     navigator.clipboard.writeText(codigo);
+    copiadoToast.showToast();
   });
 };
 
-function armazenamento(arr) {
-  localStorage.setItem(`atendimentos`, JSON.stringify(arr));
-}
+const chamaVoltar = () => {
+  const voltar = document.querySelector(".voltar");
+  voltar.addEventListener("click", () => {
+    lista.innerHTML = "";
+    atendimentos.forEach((atendimento) => addItem(atendimento));
+  });
+};

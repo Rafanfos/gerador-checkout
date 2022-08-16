@@ -8,6 +8,7 @@ body {
   max-height: 150vh;
   padding: 10px 0;
   font-family: "Anton", sans-serif;
+  background: linear-gradient(to right, #f8f8ff, #a9a9a9);
 }
 
 main {
@@ -16,18 +17,22 @@ main {
   justify-content: space-around;
   max-width: 95vw;
   margin: 0 auto;
+  margin-top: 100px;
   gap: 30px;
   align-items: center;
-  background-color: rgba(224, 223, 223, 0.521);
-  max-height: 90%;
+
+  max-height: 70%;
   padding: 2%;
+  border-radius: 10%;
 }
 
 h1 {
+  color: black;
   font-size: 32px;
 }
 
 p {
+  color: black;
   font-size: 16px;
   font-weight: 50;
 }
@@ -41,7 +46,7 @@ fieldset {
   margin: 0 auto;
   padding: 10px 0;
   gap: 10px;
-  background-color: rgba(139, 13, 13, 0.904);
+  background: linear-gradient(to right, #800000, #b22222);
   max-height: 60%;
   border-radius: 20%;
 }
@@ -106,7 +111,7 @@ li {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-radius: 8%;
+  border-radius: 20px;
   background-color: #ffff;
   width: 90%;
 }
@@ -142,14 +147,6 @@ li {
   color: red;
 }
 
-.copiarCodigo {
-  background-color: rgb(0, 81, 255);
-  color: #ffff;
-  font-weight: bold;
-  padding: 2%;
-  border-radius: 50%;
-}
-
 .remover {
   width: 10px;
   height: 10px;
@@ -162,6 +159,27 @@ span {
 .categoria-e-remover {
   display: flex;
   gap: 10px;
+}
+
+.botoesCodigo {
+  display: flex;
+  gap: 10px;
+}
+
+.copiarCodigo {
+  background: linear-gradient(to left, #1e90ff, #008080);
+  color: #ffff;
+  font-weight: bold;
+  padding: 5%;
+  border-radius: 50%;
+}
+
+.voltar {
+  background: linear-gradient(to left, #006400, #00ff7f);
+  color: #ffff;
+  font-weight: bold;
+  padding: 5%;
+  border-radius: 50%;
 }
 
 @media (min-width: 576px) {
@@ -318,7 +336,10 @@ span {
   }
 
   .copiarCodigo:hover {
-    background-color: rgb(255, 123, 0);
+    cursor: pointer;
+  }
+
+  .voltar {
     cursor: pointer;
   }
 

@@ -7,8 +7,12 @@
 
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script defer src="./src/js/const.js"></script>
     <script defer src="./src/js/botoes.js"></script>
+    <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script defer src="./src/js/toast.js"></script>
+
 
     <title>Gerador de checkout</title>
 </head>
@@ -19,7 +23,7 @@
         <fieldset>
             <form>
                 <label for="input">@</label>
-                <input type="text" id="input" placeholder="Digite o @ dos alunos"></input>
+                <input required="true "type="text" id="input" placeholder="Digite o @ dos alunos"></input>
                 <select>
                     <option id="1">Contato ativo</option>
                     <option id="2">/pergunta</option>

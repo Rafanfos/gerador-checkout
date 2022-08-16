@@ -106,15 +106,27 @@ const geradorCodigo = (atividades) => {
       item4.innerText += ` ${atividade}`;
     });
   }
+  let botoesCodigo = document.createElement("div");
+  botoesCodigo.classList.add("botoesCodigo");
+
   let botaoCopiarCodigo = document.createElement("button");
   botaoCopiarCodigo.classList.add("copiarCodigo");
   botaoCopiarCodigo.innerText = "COPIAR";
 
+  let botaoVoltar = document.createElement("button");
+  botaoVoltar.classList.add("voltar");
+  botaoVoltar.innerText = "VOLTAR";
+
   let codigo = `${item1.innerText}\n${item2.innerText}\n${item3.innerText}\n${item4.innerText}`;
 
-  lista.append(item1, item2, item3, item4, botaoCopiarCodigo);
-
+  lista.append(item1, item2, item3, item4, botoesCodigo);
+  botoesCodigo.append(botaoCopiarCodigo, botaoVoltar);
   chamaCopiarCodigo(codigo);
+  chamaVoltar();
 };
+
+function armazenamento(arr) {
+  localStorage.setItem(`atendimentos`, JSON.stringify(arr));
+}
 
 atendimentos.forEach((atendimento) => addItem(atendimento));
