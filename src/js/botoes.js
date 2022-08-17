@@ -18,7 +18,7 @@ add.addEventListener("click", () => {
   const input = document.querySelector("#input");
   let categoria = select.value;
 
-  if (categoria === "Outras atividades" || categoria === "/pergunta") {
+  if (categoria === "Contato ativo" || categoria === "/pergunta") {
     const atendimento = input.value
       .trim()
       .normalize("NFD")
