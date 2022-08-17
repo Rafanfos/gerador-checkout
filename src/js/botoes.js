@@ -16,11 +16,15 @@ select.addEventListener("click", () => {
 add.addEventListener("click", () => {
   id++;
   const input = document.querySelector("#input");
-  const atendimento = input.value
-    .trim()
-    .normalize("NFD")
-    .replace(/[^A-Z-.\s]/gi, "");
   let categoria = select.value;
+
+  if (categoria === "Outras atividades" || categoria === "/pergunta") {
+    const atendimento = input.value
+      .trim()
+      .normalize("NFD")
+      .replace(/[^A-Z-.\s]/gi, "");
+  }
+  const atendimento = input.value.trim();
 
   if (atendimento !== "") {
     const ativ = { atividade: atendimento, tipo: categoria, aId: id };
