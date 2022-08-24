@@ -23,9 +23,9 @@ add.addEventListener("click", () => {
       .trim()
       .normalize("NFD")
       .replace(/[^A-Z-.\s]/gi, "");
+  } else {
+    const atendimento = input.value.trim();
   }
-
-  const atendimento = input.value.trim();
 
   if (atendimento !== "") {
     const ativ = { atividade: atendimento, tipo: categoria, aId: id };
