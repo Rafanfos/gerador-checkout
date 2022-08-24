@@ -23,7 +23,7 @@ add.addEventListener("click", () => {
     atendimento = input.value
       .trim()
       .normalize("NFD")
-      .replace(/[^A-Z-.\s]/gi, "");
+      .replace(/[^A-Z.\s]/gi, "");
   }
 
   if (atendimento !== "") {
