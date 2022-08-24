@@ -17,14 +17,13 @@ add.addEventListener("click", () => {
   id++;
   const input = document.querySelector("#input");
   let categoria = select.value;
+  let atendimento = input.value.trim();
 
   if (categoria === "Contato ativo" || categoria === "/pergunta") {
-    const atendimento = input.value
+    atendimento = input.value
       .trim()
       .normalize("NFD")
       .replace(/[^A-Z-.\s]/gi, "");
-  } else {
-    const atendimento = input.value.trim();
   }
 
   if (atendimento !== "") {
@@ -41,11 +40,15 @@ input.addEventListener("keypress", (event) => {
   if (event.key == "Enter") {
     id++;
     const input = document.querySelector("#input");
-    const atendimento = input.value
-      .trim()
-      .normalize("NFD")
-      .replace(/[^A-Z-.\s]/gi, "");
     let categoria = select.value;
+    let atendimento = input.value.trim();
+
+    if (categoria === "Contato ativo" || categoria === "/pergunta") {
+      atendimento = input.value
+        .trim()
+        .normalize("NFD")
+        .replace(/[^A-Z-.\s]/gi, "");
+    }
 
     if (atendimento !== "") {
       const ativ = { atividade: atendimento, tipo: categoria, aId: id };
@@ -53,6 +56,7 @@ input.addEventListener("keypress", (event) => {
       addItem(ativ);
       armazenamento(atendimentos);
       input.value = "";
+      addToast.showToast();
     }
     event.preventDefault();
   }
