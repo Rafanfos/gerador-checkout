@@ -24,6 +24,7 @@ add.addEventListener("click", () => {
       .normalize("NFD")
       .replace(/[^A-Z-.\s]/gi, "");
   }
+
   const atendimento = input.value.trim();
 
   if (atendimento !== "") {
