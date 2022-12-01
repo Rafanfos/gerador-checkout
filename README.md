@@ -1,6 +1,10 @@
+#Gerador de checkout
+
+## Introdução
+
 Afim de facilitar um código gerado para fazer checkout em um serviço de monitoria, foi construída uma aplicação com HTML, CSS e Javascript Vanilla para facilitar a geração do código.
 
-Funcionamento:
+## Funcionamento:
 
 - Insira o nome do aluno atendido e em seguida o tipo de atendimento feito.
 - Selecione o botão de '+' para registrar um novo atendimento.
